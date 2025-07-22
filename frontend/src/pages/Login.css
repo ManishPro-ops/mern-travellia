@@ -1,0 +1,83 @@
+
+.logcontainer{
+    width: 30%;
+    height: 78vh;
+    margin: 0 auto;
+    margin-top: 5rem;
+    border-radius: 10px;
+    background-color: hsl(0, 100%, 98%);
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+}
+
+.login-Container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login{
+    color: var(--text-gunmetal);
+}
+.login-Container h1{
+    text-align: center;
+
+}
+
+.mail-input{
+    padding: .8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #cfc8c8;
+    background-color: hsl(0, 100%, 98%);;
+}
+#login-button{
+    background-color: rgb(125, 125, 247);
+    border: none;
+    border-radius: 10px;
+    color: var(--text-white);
+    height: 2.5rem;
+    cursor: pointer;
+}
+.accountClass{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-login-button{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 4rem auto;
+    gap: 2rem;
+   
+}
+
+.social-button{
+    padding: .8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    gap: 5rem;
+    cursor: pointer;
+    border: 1px solid #cfc8c8;  
+    border-radius: 10px;
+    background-color:hsl(0, 100%, 98%);
+}
+#fb{
+    background-color: hsl(0, 100%, 98%);
+}
+.social-img{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.error{
+    color: red;
+}
+
+html,body{
+    background-color:hsl(0, 100%, 98%);
+}

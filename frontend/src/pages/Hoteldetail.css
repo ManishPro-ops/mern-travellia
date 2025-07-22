@@ -1,0 +1,198 @@
+/* Base styling */
+.hotel-detail-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #1f2937;
+}
+
+/* Header with hotel name and rating */
+.hotel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hotel-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
+  margin: 0;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.location img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.stars {
+  font-size: 1.3rem;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.img-box:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+/* Overlay for extra photos */
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-top-left-radius: 10px;
+}
+
+/* Modal for full image */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Description section */
+.about-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.about-heading {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.about-para {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Facilities list */
+.facility-list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.facility-item {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.facility-item:hover {
+  background-color: #f3f4f6;
+}
+
+.facility-icon {
+  font-size: 1.2rem;
+  color: #3b82f6;
+}
+
+.facility-name {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Map preview */
+#mapPreview {
+  margin-top: 2rem;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hotel-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .gallery-img {
+    height: 160px;
+  }
+
+  .about-section {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    max-height: 70vh;
+  }
+}

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
+:root {
+
+    --primary-color: #6366F1;
+    --accent-color: #3f83f8;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --background-color: #ffffff;
+    --light-gray: #f0f0f0;
+    --gray: #808080;
+    --dark-gray: #555;
+    /* backgroud colors */
+  --bg-white: hsl(0, 0%, 100%);
+  --bg-black-alpha-20: hsla(0, 0%, 0%, 0.2);
+  --bg-lavender-blush: hsl(0, 100%, 98%);
+  --bg-majorelle-blue: hsl(249, 95%, 63%);
+  --bg-ocean-blue: hsl(249, 63%, 54%);
+  --bg-majorelle-blue-alpha-5: hsla(249, 95%, 63%, 0.05);
+  --bg-misty-rose: hsl(0, 100%, 95%);
+  --bg-red-salsa: hsl(357, 94%, 63%);
+  --bg-red-salsa-alpha-5: hsla(357, 94%, 63%, 0.05);
+  --bg-english-vermillion: hsl(357, 64%, 53%);
+  --bg-chrome-yellow-alpha-5: hsla(40, 100%, 50%, 0.05);
+  --bg-sunglow-alpha-10: hsla(48, 100%, 50%, 0.1);
+  --bg-gainsboro: hsl(0, 0%, 85%);
+
+  /* text color */
+  --text-white: hsl(0, 0%, 100%);
+  --text-gunmetal: hsl(209, 40%, 14%);
+  --text-light-coral: hsl(357, 96%, 73%);
+  --text-granite-gray: hsl(210, 4%, 38%);
+  --text-majorelle-blue: hsl(249, 95%, 63%);
+  --text-sunglow: hsl(48, 100%, 50%);
+
+  /* border color */
+  --border-gainsboro: hsl(0, 1%, 85%);
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-white) !important;
+}

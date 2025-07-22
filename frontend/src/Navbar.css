@@ -1,0 +1,17 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  position: fixed;
+  background-color: white;
+  color:white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}

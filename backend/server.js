@@ -21,6 +21,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/contact", contact);
 
 await connectDB();
+console.log(`✅ MongoDB connected`);
 
 // MongoDB connection (connect only once)
 // if (!mongoose.connection.readyState) {

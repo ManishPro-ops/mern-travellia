@@ -16,8 +16,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/contact", contact);
+app.use("/auth", authRoutes);
+app.use("/contact", contact);
 
 // MongoDB connection (connect only once)
 if (!mongoose.connection.readyState) {

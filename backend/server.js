@@ -4,8 +4,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
-import authRoutes from "../routes/authRoutes.js";
-import contact from "../routes/contact.js";
+import authRoutes from "./routes/authRoutes.js";
+import contact from "./routes/contact.js";
 
 dotenv.config();
 

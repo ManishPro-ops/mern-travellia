@@ -4,7 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
-import contact from "./routes/contact.js";
+import contactRoutes from "./routes/contactRoutes.js";
 import { connectDB } from "./db.js";
 
 
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/contact", contact);
+app.use("/api/contact",contactRoutes);
 
 await connectDB();
 console.log(`✅ MongoDB connected`);

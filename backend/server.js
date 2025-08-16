@@ -4,7 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
-import Contact from "./routes/Contact.js";
+import contact from "./routes/contact.js";
 import { connectDB } from "./db.js";
 
 
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/contact", Contact);
+app.use("/api/contact", contact);
 
 await connectDB();
 console.log(`✅ MongoDB connected`);
@@ -36,7 +36,7 @@ console.log(`✅ MongoDB connected`);
 //   .catch((err) => console.log("❌ MongoDB connection error:", err));
 // }
 
-// ✅ Instead of app.listen, just export to make it live on vercel
+//✅ Instead of app.listen, just export to make it live on vercel
 // const PORT=process.env.PORT||8000;
 
 // app.listen(PORT,()=>{

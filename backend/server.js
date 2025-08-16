@@ -37,11 +37,10 @@ console.log(`✅ MongoDB connected`);
 // }
 
 // ✅ Instead of app.listen, just export to make it live on vercel
-// const PORT=process.env.PORT||8000;
+const PORT=process.env.PORT||8000;
 
-// app.listen(PORT,()=>{
-//   console.log(`server running on port ${PORT}`)
-// })}
-
+app.listen(PORT,()=>{
+  console.log(`server running on port ${PORT}`)
+})
 
 export default app;

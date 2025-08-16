@@ -1,10 +1,12 @@
 import express from "express";
+import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
-import contact from "./routes/contact.js";
+import contact from "./routes/Contact.js";
 import { connectDB } from "./db.js";
+
 
 dotenv.config();
 
@@ -18,14 +20,26 @@ app.use(bodyParser.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/contact", contact);
 
-// Serverless-safe DB connection
-// Must be awaited here, before handling requests
 await connectDB();
+console.log(`✅ MongoDB connected`);
 
-// Test route to confirm deployment
-app.get("/api/health", (req, res) => {
-  res.status(200).json({ status: "ok", db: mongoose.connection.readyState });
-});
+// MongoDB connection (connect only once)
+// if (!mongoose.connection.readyState) {
+//   mongoose.connect(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("✅ MongoDB connected");
+//     console.log("Database name:", mongoose.connection.name);
+//   })
+//   .catch((err) => console.log("❌ MongoDB connection error:", err));
+// }
 
-// Export for Vercel
+// ✅ Instead of app.listen, just export to make it live on vercel
+// const PORT=process.env.PORT||8000;
+
+// app.listen(PORT,()=>{
+//   console.log(`server running on port ${PORT}`)
+// })
 export default app;

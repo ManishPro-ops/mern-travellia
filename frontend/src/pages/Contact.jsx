@@ -25,7 +25,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://mern-travellia-q6pswj5zt-manish-srivastavs-projects.vercel.app/api/contact/send-message",
+        `${import.meta.env.VITE_API_URL}/api/auth/send-message`,
         formData
       );
       alert("Message sent successfully!");

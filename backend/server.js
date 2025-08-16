@@ -13,8 +13,19 @@ dotenv.config();
 const app = express();
 
 // Middleware
+const allowedOrigins = [
+  "http://localhost:5173", 
+  "https://mern-travellia.vercel.app" // 👈 your frontend deployed URL
+];
+
 app.use(cors({
-  origin: "http://localhost:5173", 
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -46,7 +57,7 @@ console.log(`✅ MongoDB connected`);
 
 // app.listen(PORT,()=>{
 //   console.log(`server running on port ${PORT}`)
-// })}
+// })
 
 
 app.get("/", (req, res) => {

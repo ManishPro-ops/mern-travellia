@@ -21,7 +21,7 @@ function Login() {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/api/auth/login", {
+      const response = await axios.post("https://mern-travellia-q6pswj5zt-manish-srivastavs-projects.vercel.app/api/auth/login", {
         email,
         password,
       });

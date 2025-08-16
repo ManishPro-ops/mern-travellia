@@ -25,7 +25,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/contact/send-message",
+        "https://mern-travellia-q6pswj5zt-manish-srivastavs-projects.vercel.app/api/contact/send-message",
         formData
       );
       alert("Message sent successfully!");

@@ -40,7 +40,7 @@ function Signup() {
 
     try {
       // 🆕 POST request to backend
-      const response = await axios.post("http://localhost:8000/api/auth/signup", {
+      const response = await axios.post("https://mern-travellia-q6pswj5zt-manish-srivastavs-projects.vercel.app/api/auth/signup", {
         email,
         password: createPassword, // Send email and password
       });

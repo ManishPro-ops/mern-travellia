@@ -4,7 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
-import contact from "./routes/Contact.js";
+import Contact from "./routes/Contact.js";
 import { connectDB } from "./db.js";
 
 

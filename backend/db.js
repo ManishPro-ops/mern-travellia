@@ -8,19 +8,11 @@ if (!cached) {
 }
 
 export async function connectDB() {
-  if (cached.conn) {
-    // If already connected, use cached connection
-    return cached.conn;
-  }
+  if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    // Create new connection promise
-    cached.promise = mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = mongoose.connect(process.env.MONGO_URI)
+      .then((mongoose) => mongoose);
   }
 
   cached.conn = await cached.promise;

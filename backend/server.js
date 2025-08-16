@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/contact", contact);
+app.use("/api/contact", Contact);
 
 await connectDB();
 console.log(`✅ MongoDB connected`);

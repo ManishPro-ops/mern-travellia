@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 import authRoutes from "../routes/authRoutes.js";
-import contactRoutes from "../routes/contact.js";
+import contact from "../routes/contact.js";
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/contact", contactRoutes);
+app.use("/api/contact", contact);
 
 // MongoDB connection (connect only once)
 if (!mongoose.connection.readyState) {

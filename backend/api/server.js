@@ -29,5 +29,5 @@ if (!mongoose.connection.readyState) {
   .catch((err) => console.log("❌ MongoDB connection error:", err));
 }
 
-// ✅ Instead of app.listen, just export
+// ✅ Instead of app.listen, just export to make it live on vercel
 export default app;

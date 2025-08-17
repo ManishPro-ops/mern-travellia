@@ -12,9 +12,11 @@ const app = express();
 
 // Middleware
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://mern-travellia-frontend.vercel.app/"
+  "http://localhost:5173", 
+  "https://mern-travellia.vercel.app", 
+  "https://mern-travellia-frontend.vercel.app"
 ];
+
 
 app.use(cors({
   origin: function(origin, callback) {

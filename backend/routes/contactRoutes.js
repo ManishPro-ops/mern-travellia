@@ -17,8 +17,8 @@ export const sendMessage = async (req, res) => {
   try {
     const result = await client.messages.create({
       body: text,
-      from: process.env.TWILIO_PHONE_NUMBER, // Your verified Twilio number
-      to: process.env.MY_PERSONAL_PHONE      // Your personal number
+      from: process.env.TWILIO_PHONE_NUMBER,
+      to: process.env.MY_PERSONAL_PHONE
     });
 
     res.status(200).json({ success: true, sid: result.sid });

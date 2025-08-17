@@ -25,7 +25,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/send-message`,
+        `${import.meta.env.VITE_API_URL}/api/contact/send-message`,
         formData
       );
       alert("Message sent successfully!");

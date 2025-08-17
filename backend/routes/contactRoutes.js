@@ -1,8 +1,28 @@
-import express from "express";
-import { sendMessage } from "../controllers/sendMessage.js";
+import twilio from "twilio";
 
-const router = express.Router();
+const client = twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
-router.post("/send-message", sendMessage);
+export const sendMessage = async (req, res) => {
+  const { name, email, subject, message } = req.body;
 
-export default router;
+  const text = `New Hotel Enquiry:
+  Email: ${email}
+  Name: ${name}
+  Subject: ${subject}
+  Message: ${message}`;
+
+  try {
+    const result = await client.messages.create({
+      body: text,
+      from: process.env.TWILIO_PHONE_NUMBER, // Your verified Twilio number
+      to: process.env.MY_PERSONAL_PHONE      // Your personal number
+    });
+
+    res.status(200).json({ success: true, sid: result.sid });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};

@@ -1,21 +1,20 @@
-
 .hero-container{
     width: 80%;
     display: flex;
     margin: 5rem auto;
     align-items: center;
     justify-content: space-between;
-
+    flex-wrap: wrap; /* ensures responsiveness */
 }
 
 .hero-container-left{
     width: 40%;
     display: flex;
+    flex-direction: column;
     gap: 1.3rem;
-   flex-direction: column;
-   justify-content: center;
-  
+    justify-content: center;
 }
+
 .tag{
     width: 47%;
     display: flex;
@@ -23,53 +22,68 @@
     background-color: hsl(0, 84%, 93%);
     padding: 0.6rem;
     gap: .6rem;
+    align-items: center; /* vertical centering */
 }
+
 .tag-text{
     font-size: .9rem;
     color: #e29c99;
     font-weight: 500;
-    align-items: center;
     padding-top: 5px;
 }
+
 .tag-desc{
     font-size: 2rem;
     color: var(--text-gunmetal);
     font-weight: 500;
 }
+
 .tag-para{
     font-size: .9rem;
     color: var(--dark-gray);
     font-weight: 500;
 }
+
+/* Buttons container */
 .bottomtext{
     width: 90%;
     margin-top: 1.8rem;
     display: flex;
     gap: 1.8rem;
+    flex-wrap: wrap;
 }
+
+/* Left button */
 .bottomtextleft{
-   background-color:var(--bg-red-salsa);
-   padding: .8rem 1rem;
-   border-radius: 3rem;
-}
-.bottomtextleft-title{
-    font-size: 1rem; 
+    background-color: var(--bg-red-salsa);
+    border-radius: 3rem;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    font-size: 1rem;
     color: white;
+    cursor: pointer;
 }
+
+/* Right button */
 .bottomtextright{
     display: flex;
 }
+
 .bottomtextright-title{
+    background-color: transparent; /* optional */
+    border-radius: 3rem;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.1rem;
     color: var(--text-color);
-    padding: .8rem 1rem;
     font-weight: 600;
+    cursor: pointer;
 }
-.hero-image{
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-}
+
 .hero-container-right{
    width: 60%;
    display: flex;
@@ -79,5 +93,46 @@
 
 .hero-container-right img{
     width: 90%;
+    border-radius: 10px; /* optional styling */
 }
 
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px){
+    .hero-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-container-left,
+    .hero-container-right{
+        width: 100%;
+        text-align: center;
+    }
+    .tag{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .bottomtext{
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+    .tag-desc{
+        font-size: 1.5rem;
+    }
+    .tag-para{
+        font-size: 0.8rem;
+    }
+    .bottomtextleft,
+    .bottomtextright-title{
+        width: 100%;
+        padding: 0.8rem 0;
+    }
+    .hero-container-right img{
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,83 +1,142 @@
-
-.logcontainer{
-    width: 30%;
-    height: 78vh;
-    margin: 0 auto;
-    margin-top: 5rem;
-    border-radius: 10px;
-    background-color: hsl(0, 100%, 98%);
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.login-Container{
-    width: 90%;
-    margin: 0 auto;
+html, body {
+    font-family: 'Arial', sans-serif;
+    background-color: hsl(0, 100%, 98%);
+    height: 100%;
+}
+
+/* Container */
+.logcontainer {
+    width: 35%;
+    min-width: 320px;
+    height: auto;
+    margin: 5rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
-.login{
-    color: var(--text-gunmetal);
-}
-.login-Container h1{
+/* Login Header */
+.login-Container h1 {
     text-align: center;
-
+    color: var(--text-gunmetal);
+    margin-bottom: 1.5rem;
 }
 
-.mail-input{
-    padding: .8rem;
+/* Input Fields */
+.mail-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid #cfc8c8;
+    background-color: hsl(0, 100%, 98%);
+}
+
+/* Login Button */
+#login-button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 5px;
-    border: 1px solid #cfc8c8;
-    background-color: hsl(0, 100%, 98%);;
-}
-#login-button{
-    background-color: rgb(125, 125, 247);
     border: none;
-    border-radius: 10px;
-    color: var(--text-white);
-    height: 2.5rem;
+    border-radius: 8px;
+    background-color: rgb(125, 125, 247);
+    color: white;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
-.accountClass{
+
+#login-button:hover {
+    background-color: rgb(100, 100, 220);
+}
+
+/* Account Section */
+.accountClass {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
 }
 
-.social-login-button{
+/* Social Login */
+.social-login-button {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin: 4rem auto;
-    gap: 2rem;
-   
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.social-button{
-    padding: .8rem;
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0.8rem;
     font-size: 1rem;
     font-weight: 600;
-    display: flex;
-    gap: 5rem;
-    cursor: pointer;
-    border: 1px solid #cfc8c8;  
-    border-radius: 10px;
-    background-color:hsl(0, 100%, 98%);
-}
-#fb{
+    border: 1px solid #cfc8c8;
+    border-radius: 8px;
     background-color: hsl(0, 100%, 98%);
-}
-.social-img{
-    height: 1.5rem;
-    width: 1.5rem;
-}
-.error{
-    color: red;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-html,body{
-    background-color:hsl(0, 100%, 98%);
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.social-img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Error Messages */
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .logcontainer {
+        width: 50%;
+        margin-top: 3rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .logcontainer {
+        width: 90%;
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    #login-button,
+    .mail-input,
+    .social-button {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+    }
 }

@@ -1,11 +1,10 @@
-
-.experience-container{
+.experience-container {
     width: 100%;
     margin: 5rem 0;
-    padding: 1rem 1rem;
-
+    padding: 1rem;
 }
-.experience-content{
+
+.experience-content {
     width: 90%;
     display: flex;
     margin: 0 auto;
@@ -13,57 +12,133 @@
     align-items: center;
     justify-content: center;
 }
-.left-experience-content{
+
+/* Left Content (Image) */
+.left-experience-content {
     width: 40%;
 }
-.experience-image{
+
+.experience-image {
     width: 28rem;
     height: 35rem;
+    border-radius: 10px;
+    object-fit: cover;
 }
-.right-experience-content{
+
+/* Right Content (Text & Numbers) */
+.right-experience-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin-left: 2rem;
 }
-.right-experience-content-heading{
+
+.right-experience-content-heading {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.experience-text{
+
+.experience-text {
     color: var(--primary-color);
     font-size: 1.2rem;
-
 }
-.experience-heading{
+
+.experience-heading {
     color: var(--text-gunmetal);
     font-size: 2.8rem;
     font-weight: bold;
 }
-.experience-desc{
+
+.experience-desc {
     font-size: 1rem;
     color: var(--text-granite-gray);
 }
-.right-experience-content-number{
+
+.right-experience-content-number {
     display: flex;
     gap: 4rem;
 }
-.right-experience-content-number-left{
+
+.right-experience-content-number-left {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
 }
-.number{
+
+.number {
     font-size: 2rem;
     font-weight: bold;
     color: var(--text-majorelle-blue);
 }
-.years{
+
+.years {
     font-size: 1rem;
     color: var(--dark-gray);
 }
-.experience{
+
+.experience {
     font-size: 1rem;
     color: var(--dark-gray);
+}
+
+/* ----------------- Responsive Styles ----------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .experience-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .left-experience-content,
+    .right-experience-content {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .experience-image {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .right-experience-content-number {
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .experience-heading {
+        font-size: 2rem;
+    }
+
+    .experience-text {
+        font-size: 1rem;
+    }
+
+    .experience-desc {
+        font-size: 0.9rem;
+    }
+
+    .experience-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-experience-content-number {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .number {
+        font-size: 1.5rem;
+    }
+
+    .years {
+        font-size: 0.9rem;
+    }
 }
